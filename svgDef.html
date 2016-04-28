@@ -1,0 +1,12 @@
+<template name="svgDef">
+<svg class="defs-only">
+ <filter id="monochrome" color-interpolation-filters="sRGB"
+          x="0" y="0" height="100%" width="100%">
+    <feColorMatrix type="matrix"
+         values="0 0 0 0 0 
+                 0 0 0 0 0  
+                 0 0 1 0 0.3 
+                 0 0 0 0 1" />
+  </filter>
+</svg>
+</template>

@@ -1,0 +1,115 @@
+<head>
+<title>Is It Still Good?</title>
+</head>
+
+<body>
+{{> frontHome}}
+{{> optionList}}
+{{> modal}}
+</body>
+
+<!--This is the title 'Is Still Good'-->
+<template name="frontHome"> 
+    <div class="front-top">
+        <h1 class="right">Is</h1>
+    </div>
+    <div class="front-bottom clearfix">
+        <h1 class="left">Still</h1>
+        <h1 class="right">Good</h1>
+    </div>
+</template>
+
+<!--This is the title 'Is Still Good'-->
+<template name="optionList">
+<div class="front-list">  
+  <ul class="mainList">
+    {{#each option}}
+        <li class="tooltip">
+            <h1><a href="{{url}}" target="_blank">{{name}}</a></h1>
+            <span class="tooltiptext" style="-ms-transform:rotate({{angle}}deg);-webkit-transform:rotate({{angle}}deg);transform:rotate({{angle}}deg); ">
+              <h2>'Til<br>{{guessdate}}</h2>
+            </span>
+        </li>
+    {{/each}}
+  </ul>
+</div>
+</template>
+
+<template name="modal">
+  
+    <footer>
+     <button class="myBtn">Is It Still Good?</button>
+      <button class="myBtn-2">Speculation Log</button>
+    </footer>
+    
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <div class="content">
+          <div class="grid">
+            <div class="col-8-10">  
+            <h2>Consider the rhetoric on the internet–whether 
+            it be a shared article or comments on a video. 
+            Most often the tone includes lofty conjectures about the future. Speculations blurted out
+            attempt to determine how long some thing will last, 
+            how long it is still good. The website <span style="color:rgb(0,30,255">Is It Still Good?</span> tries to be a growing Magic 8-ball of sorts by 
+            collecting the speculations that are continuously 
+            published on the internet. <span style="color:rgb(0,30,255">Is It Still Good?</span> will most likely stay in use 
+            'til about the end of May 2016.</h2>
+            </div>
+            <div class="close col-2-10">×</div>
+          </div>  
+        </div>
+        <div class="content">
+          <form>
+              <div style="width:100%;display:block;" class="clearfix">
+              <div style="width:60%; float:right;">
+              <h3><label for="optionName">What Is Still Good?</label></h3>
+              <input type="text" name="optionName" placeholder="Ex: Printed Newspapers">
+              </div>
+              </div>
+              
+              <div style="width:100%;display:block;" class="clearfix">
+              <div style="width:30%;float:left;">              
+              <h3><label for="optionDate">'Til What Year?</label></h3>    
+              <input type="text" name="optionDate" placeholder="Ex: 2025">
+              </div>
+              </div>
+              
+              <div style="width:100%;display:block;" class="clearfix">
+              <div style="width:75%;float:right;">            
+              <h3><label for="optionURL">Proof (URL Citation)</label></h3>        
+              <input type="text" name="optionURL" placeholder="Ex: newspapersaredead.com">        
+              </div>
+              </div>
+              
+              <input type="submit" class="subBtn" value="Add to Speculations">
+             
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    <!--Log Modal-->
+    <div id="myModal" class="modal-2">
+      <div class="modal-content">
+        <div class="content">
+          <div class="grid">
+            <div class="col-8-10">  
+              <ul>
+              {{#each option}}
+                  <li class="log">
+                    <h3>
+                      <a href="{{url}}" target="_blank">{{name}}</a> is good 'til {{guessdate}} 
+                      <span style="color:rgb(150,150,150);">Submitted: {{formattedDate}}</span>
+                    </h3>
+                  </li>
+              {{/each}}
+              </ul>
+            </div>
+            <div class="close-2 col-2-10">×</div>
+          </div>  
+      </div>
+    </div> 
+    </div>
+</template>
+
